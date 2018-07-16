@@ -1,4 +1,4 @@
-package common
+package util
 
 import (
 	"reflect"
@@ -10,7 +10,7 @@ import (
 
 func InArray(val interface{}, array interface{}) (exists bool) {
 	exists = false
-	
+
 	switch reflect.TypeOf(array).Kind() {
 	case reflect.Slice:
 		s := reflect.ValueOf(array)

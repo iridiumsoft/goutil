@@ -1,11 +1,11 @@
-package file
+package util
 
 import (
 	"archive/zip"
 	"os"
 	"io"
 	"encoding/json"
-	
+
 	"github.com/sirupsen/logrus"
 	"github.com/gin-gonic/gin"
 	"path/filepath"
