@@ -4,7 +4,6 @@ import (
 	"reflect"
 	"fmt"
 	"encoding/json"
-	"gopkg.in/mgo.v2/bson"
 	"github.com/gin-gonic/gin"
 )
 
@@ -32,7 +31,7 @@ func Print(data interface{}) {
 }
 
 // This function will be used as replacement of JS Array.map
-func Map(array []bson.M, cb func(bson.M) bson.M) []bson.M {
+func Map(array []Object, cb func(Object) Object) []Object {
 	for key, item := range array {
 		array[key] = cb(item)
 	}
@@ -46,6 +45,6 @@ func GetParams(ctx *gin.Context) map[string]interface{} {
 		in := []byte(params)
 		json.Unmarshal(in, &data)
 	}
-	param, _ := data.(map[string]interface{})
+	param, _ := data.(Object)
 	return param
 }
