@@ -45,6 +45,6 @@ func GetParams(ctx *gin.Context) map[string]interface{} {
 		in := []byte(params)
 		json.Unmarshal(in, &data)
 	}
-	param, _ := data.(Object)
+	param, _ := data.(map[string]interface{})
 	return param
 }
