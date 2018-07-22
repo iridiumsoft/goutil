@@ -51,6 +51,9 @@ func CSV2JSON(Path string) []Object {
 			if Key == "Villages" || Key == "villages" {
 				Key = "village"
 			}
+			if Key == "na" {
+				item = strings.Replace(item, "NA-", "", -1)
+			}
 			row[Key] = item
 		}
 		data = append(data, row)
